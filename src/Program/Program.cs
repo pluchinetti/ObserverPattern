@@ -11,10 +11,10 @@ namespace Observer
     {
         public static void Main(string[] args)
         {
-            TemperatureReporter tempRep = new TemperatureReporter();
-            TemperatureMonitor tempMon = new TemperatureMonitor();
+            TemperatureReporter tempRep = new TemperatureReporter(); //Observador
+            TemperatureMonitor tempMon = new TemperatureMonitor(); //Proveedor
 
-            tempMon.Subscribe(tempRep);
+            tempRep.Subscribe(tempMon);
             tempMon.GetTemperature();
         }
     }
